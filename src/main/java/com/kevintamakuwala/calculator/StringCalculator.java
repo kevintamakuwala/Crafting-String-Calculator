@@ -1,8 +1,10 @@
 // Author: @kevintamakuwala
 package com.kevintamakuwala.calculator;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
+import com.kevintamakuwala.calculator.exceptions.NegativeNumberException;
 import com.kevintamakuwala.calculator.factories.DelimiterFactory;
 import com.kevintamakuwala.calculator.strategies.DelimiterStrategy;
 
@@ -15,20 +17,33 @@ public class StringCalculator {
      * @return the sum of the numbers in the input string
      */
     public int add(String numbers) {
-
-        if (numbers == null || numbers.length() == 0) {
+        if (numbers == null || numbers.isEmpty()) {
             return 0;
         }
 
-        // get delimiter strategy
         delimiterStrategy = DelimiterFactory.getDelimiterStrategy(numbers);
 
-        // converts new line to comma
-        numbers = delimiterStrategy.transformNumbers(numbers);
+        String[] nums = delimiterStrategy.transformNumbers(numbers).split(",");
 
-        // Adding numbers using stream API :)
-        return Arrays.stream(numbers.split(","))
-                .mapToInt(Integer::parseInt)
-                .sum();
+        List<Integer> negativeNumbers = new ArrayList<>();
+        int sum = 0;
+
+        for (String num : nums) {
+            num = num.trim();
+            if (!num.isEmpty()) {
+                int number = Integer.parseInt(num);
+                if (number < 0) {
+                    negativeNumbers.add(number);
+                } else {
+                    sum += number;
+                }
+            }
+        }
+
+        if (!negativeNumbers.isEmpty()) {
+            throw new NegativeNumberException("Negatives not allowed: " + negativeNumbers);
+        }
+
+        return sum;
     }
 }
