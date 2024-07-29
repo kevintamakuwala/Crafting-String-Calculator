@@ -26,12 +26,12 @@ public class StringCalculator {
         String[] nums = delimiterStrategy.transformNumbers(numbers).split(",");
 
         List<Integer> negativeNumbers = new ArrayList<>();
-        int sum = 0;
+        int sum = 0, number;
 
         for (String num : nums) {
             num = num.trim();
-            if (!num.isEmpty()) {
-                int number = Integer.parseInt(num);
+
+            if (!num.isEmpty() && (number = Integer.parseInt(num)) <= 1000) {
                 if (number < 0) {
                     negativeNumbers.add(number);
                 } else {

@@ -66,5 +66,10 @@ public class StringCalculatorTest {
             assertEquals("Negatives not allowed: [-1]", e.getMessage());
         }
     }
-    
+
+    // Numbers greater than 1000
+    @Test
+    public void testAddNumbersGreaterThan1000() {
+        assertEquals(2, calculator.add("2,1001"));
+    }
 }

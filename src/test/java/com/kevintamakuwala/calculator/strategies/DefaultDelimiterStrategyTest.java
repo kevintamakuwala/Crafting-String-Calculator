@@ -1,11 +1,9 @@
-package com.kevintamakuwala.calculator.strategy;
+package com.kevintamakuwala.calculator.strategies;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-import com.kevintamakuwala.calculator.strategies.DefaultDelimiterStrategy;
-import com.kevintamakuwala.calculator.strategies.DelimiterStrategy;
 
 public class DefaultDelimiterStrategyTest {
 
