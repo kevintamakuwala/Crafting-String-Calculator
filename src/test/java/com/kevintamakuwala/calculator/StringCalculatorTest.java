@@ -1,9 +1,7 @@
-package com.kevintamakuwala;
+package com.kevintamakuwala.calculator;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
-
-import com.kevintamakuwala.calculator.StringCalculator;
 
 public class StringCalculatorTest {
 
@@ -37,4 +35,16 @@ public class StringCalculatorTest {
         assertEquals(10, calculator.add("0,0,1,2,3,4"));
     }
 
+    // New Line as Delimiter
+    @Test
+    public void testAddNewLineAsDelimiter() {
+        assertEquals(6, calculator.add("1\n2\n3"));
+    }
+
+    // comma and New Line as Delimiter
+    @Test
+    public void testAddCommaAndNewLineAsDelimiter() {
+        assertEquals(0, calculator.add("\n"));
+        assertEquals(6, calculator.add("1\n2,3\n"));
+    }
 }
