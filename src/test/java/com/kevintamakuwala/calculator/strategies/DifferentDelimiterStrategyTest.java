@@ -17,4 +17,9 @@ public class DifferentDelimiterStrategyTest {
         assertEquals("1,2", strategy.transformNumbers("//;\n1;2"));
         assertEquals("1,2,3", strategy.transformNumbers("//;\n1;2,3"));
     }
+
+    @Test
+    public void testDifferentDelimiterStrategyWithMultipleDelimiters() {
+        assertEquals("1,2,3", strategy.transformNumbers("//[;;][,,,]\n1;;2,,,3"));
+    }
 }
