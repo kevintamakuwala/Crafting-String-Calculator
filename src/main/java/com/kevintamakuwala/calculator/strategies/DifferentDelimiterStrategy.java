@@ -19,8 +19,9 @@ public class DifferentDelimiterStrategy extends DelimiterStrategy {
      */
     @Override
     public String transformNumbers(String numbers) {
+
         if (numbers.startsWith("//")) {
-            int newlineIndex = numbers.indexOf("\n");
+            int newlineIndex = numbers.indexOf("\n", numbers.indexOf("]"));
             if (newlineIndex > 0) {
                 String delimiterSection = numbers.substring(2, newlineIndex);
                 numbers = numbers.substring(newlineIndex + 1);
@@ -36,7 +37,6 @@ public class DifferentDelimiterStrategy extends DelimiterStrategy {
             }
         }
         return numbers.replace("\n", ",");
-
     }
 
     /**

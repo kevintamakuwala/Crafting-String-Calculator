@@ -72,4 +72,10 @@ public class StringCalculatorTest {
     public void testAddNumbersGreaterThan1000() {
         assertEquals(2, calculator.add("2,1001"));
     }
+
+    // Multiple Delimiters of any length
+    @Test
+    public void testAddMultipleDelimitersOfAnyLength() {
+        assertEquals(6, calculator.add("//[;;][,,,]\n1;;2,,,3"));
+    }
 }
