@@ -1,5 +1,10 @@
 # Crafting String Calculator
-<img src="assets/img.svg" alt="Brief-Git-Workflow"/>
+### Tasks Completed:
+- **Basic**: https://blog.incubyte.co/blog/tdd-assessment/
+- **Extra**: https://osherove.com/tdd-kata-1/
+<br/>
+
+<img src="assets/img.svg" alt="project-overview"/>
 
 ### Project Details:
 - Language: **Java**
@@ -18,7 +23,6 @@
    ```
 
 3. **Compile and Test the Project**
-
    ```bash
    mvn compile
    mvn test
@@ -26,9 +30,8 @@
 
 ---
 ## Thank You, Incubyte!
-#### Looking forward to contributing and growing with the team.
+#### Looking forward to contributing and growing with the team :)
+#### Sincerely,
+#### Kevin Tamakuwala.
 ---
-#### Sincerely,<br/>
-
-#### Kevin Tamakuwala
 
