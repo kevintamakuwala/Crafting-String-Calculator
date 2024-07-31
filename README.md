@@ -1,4 +1,5 @@
 # Crafting String Calculator
+*As the tests get more specific, the code gets more generic. - Uncle Bob*
 ### Tasks Completed:
 - **Basic**: https://blog.incubyte.co/blog/tdd-assessment/
 - **Extra**: https://osherove.com/tdd-kata-1/
@@ -27,7 +28,8 @@
    mvn compile
    mvn test
    ```
-
+## References:
+- [Uncle Bob's Three Laws of TDD ](https://www.youtube.com/watch?v=qkblc5WRn-U)
 ---
 ## Thank You, Incubyte!
 #### Looking forward to contributing and growing with the team :)
