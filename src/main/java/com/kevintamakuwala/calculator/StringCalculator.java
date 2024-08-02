@@ -2,7 +2,11 @@
 package com.kevintamakuwala.calculator;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import com.kevintamakuwala.calculator.exceptions.NegativeNumberException;
 import com.kevintamakuwala.calculator.factories.DelimiterFactory;
@@ -27,6 +31,16 @@ public class StringCalculator {
 
         List<Integer> negativeNumbers = new ArrayList<>();
         int sum = 0, number;
+        // 1,2,1
+        Map<String, Integer> uniqueNums = new HashMap<>();
+
+        for (String num : nums) {
+            if (!uniqueNums.containsKey(num)) {
+                uniqueNums.put(num, 1);
+            } else {
+                uniqueNums.put(num, uniqueNums.get(num) + 1);
+            }
+        }
 
         for (String num : nums) {
             num = num.trim();
@@ -35,7 +49,9 @@ public class StringCalculator {
                 if (number < 0) {
                     negativeNumbers.add(number);
                 } else {
-                    sum += number;
+                    if (uniqueNums.get(num) == 1) {
+                        sum += number;
+                    }
                 }
             }
         }

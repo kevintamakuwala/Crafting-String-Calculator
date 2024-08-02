@@ -34,7 +34,7 @@ public class StringCalculatorTest {
     // 'N' Numbers
     @Test
     public void testAddMultipleNumbersSeparatedByComma() {
-        assertEquals(10, calculator.add("0,0,1,2,3,4"));
+        assertEquals(10, calculator.add("0,1,2,3,4"));
     }
 
     // New Line as Delimiter
@@ -77,5 +77,10 @@ public class StringCalculatorTest {
     @Test
     public void testAddMultipleDelimitersOfAnyLength() {
         assertEquals(6, calculator.add("//[;;][,,,]\n1;;2,,,3"));
+    }
+    
+    @Test
+    public void testAddIgnoreDuplicates() {
+        assertEquals(2, calculator.add("1,2,1"));
     }
 }
